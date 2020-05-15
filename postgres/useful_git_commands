@@ -1,0 +1,9 @@
+#Overwrite master with other branch
+branch=ogame_2.0;
+git checkout $branch;
+git merge -s ours master;
+git checkout master;
+git merge $branch;
+
+#Remove a file or directory from all local commits
+git filter-branch -f --index-filter "git rm -rf --cached --ignore-unmatch FOLDERNAME" -- --all

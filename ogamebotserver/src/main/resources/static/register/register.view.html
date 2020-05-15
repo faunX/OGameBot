@@ -1,0 +1,55 @@
+<div ng-app layout="column" layout-align="center center" layout-fill="layout-fill">
+    <div class="loginBox md-whiteframe-z1" layout="column">
+        <md-toolbar>
+            <h2 class="md-toolbar-tools"><span>Register</span></h2>
+        </md-toolbar>
+        <form name="form" ng-submit="vm.register()" role="form">
+
+            <md-content class="md-padding" layout="column">
+                <md-input-container>
+                <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+                    <label for="username">First name</label>
+                    <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
+                    <div ng-messages="form.firstName.$dirty && form.firstName.$error.required">
+                        <div ng-message="required">First Name is required</div>
+                    </div>
+                </div>
+                </md-input-container>
+                <md-input-container>
+                <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+                    <label for="username">Last name</label>
+                    <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
+                    <div ng-messages="form.lastName.$dirty && form.lastName.$error.required">
+                        <div ng-message="required">Last Name is required</div>
+                    </div>
+                </div>
+                </md-input-container>
+                <md-input-container>
+                <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
+                    <div ng-messages="form.username.$dirty && form.username.$error.required">
+                        <div ng-message="required">Username is required</div>
+                    </div>
+                </div>
+                </md-input-container>
+                <md-input-container>
+                <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
+                    <div ng-messages="form.password.$dirty && form.password.$error.required">
+                        <div ng-message="required">Password is required</div>
+                    </div>
+                </div>
+                </md-input-container>
+                <md-input-container>
+                <div layout="row" layout-align="center center" style="padding-top:20px">
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="form.$invalid || vm.dataLoading">Register</md-button>
+                    <div flex="flex"></div>
+                    <md-button href="#!/login" class="md-raised">Cancel</md-button>
+                </div>
+                </md-input-container>
+            </md-content>
+        </form>
+    </div>
+</div>

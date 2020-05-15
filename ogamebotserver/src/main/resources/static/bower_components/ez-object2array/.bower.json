@@ -1,0 +1,23 @@
+{
+  "name": "ez-object2array",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "angular": "latest",
+    "angular-mocks": "latest"
+  },
+  "homepage": "https://github.com/jdewit/ez-object2array",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.1",
+    "commit": "05d9253f17f59bd0f393aa0475c306414acd8c07"
+  },
+  "_source": "https://github.com/jdewit/ez-object2array.git",
+  "_target": "*",
+  "_originalSource": "ez-object2array"
+}

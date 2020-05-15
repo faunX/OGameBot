@@ -1,0 +1,80 @@
+<div data-ng-init="vm.init()" layout="row" style="height: 100%;" flex>
+    <div id="sidebar" style="height: 100%; width: 300px; border-color: grey; border-width: 1px; border-style: solid;">
+        <md-subheader class="md-no-sticky">Test Cases</md-subheader>
+        <md-progress-circular ng-if="!vm.dataLoaded" md-mode="indeterminate"></md-progress-circular>
+        <div ng-if="vm.dataLoaded">
+            <md-list-item ng-repeat="test in vm.getTests()"
+                          ng-click="vm.goToTest(test.name, $event)"
+                          ng-class="{selectedIndex: test.active}"
+                          class="noright" flex layout="row">
+                <div style="height: 100%;"><p>{{ test.name }}</p></div>
+                <div style="height: 100%; width: 50px">
+                    <md-checkbox class="md-secondary" ng-model="test.selected"></md-checkbox>
+                    <ng-md-icon icon="delete_forever" ng-click="vm.delete(test.name,$event)" aria-label="Send Email" class="md-secondary md-hue-3" ></ng-md-icon>
+                    <!--<ng-md-icon class="md-secondary" ng-click="doSecondaryAction($event)" aria-label="Chat" icon="message"></ng-md-icon >-->
+                </div>
+            </md-list-item>
+        </div>
+    </div>
+    <div style="width: 100%">
+        <div style="height: 75px; width: 100%; border-color: grey; border-width: 1px; border-style: solid;" flex layout="row">
+            <md-button ng-show="!showRename" ng-disabled="vm.saveLoading"
+                       ng-click="vm.save()">
+                <md-progress-circular ng-if="vm.saveLoading" md-mode="indeterminate"></md-progress-circular>
+                <md-tooltip md-direction="top">Save</md-tooltip>
+                <ng-md-icon ng-if="!vm.saveLoading"
+                            icon="save"
+                            aria-label="Save"
+                            class="md-secondary md-hue-3" ></ng-md-icon>
+            </md-button>
+            <md-progress-circular ng-if="vm.resultLoading || vm.saveLoading" md-mode="indeterminate"></md-progress-circular>
+            <md-button ng-show="!showRename" ng-disabled="vm.resultLoading || vm.saveLoading"
+                       ng-click="vm.runTest($event)">
+                <md-tooltip md-direction="top">Run Test</md-tooltip>
+                <ng-md-icon icon="build" ng-if="!(vm.resultLoading || vm.saveLoading)"
+                            aria-label="Run"
+                            class="md-secondary md-hue-3" ></ng-md-icon>
+            </md-button>
+            <md-button ng-click="showRename = !showRename"" ng-show="!showRename">
+                <md-tooltip md-direction="top">Rename</md-tooltip>
+                <ng-md-icon icon="create"
+                            aria-label="rename"
+                            class="md-secondary md-hue-3" ></ng-md-icon>
+            </md-button>
+            <md-toolbar class="md-hue-1" ng-show="showRename" style="background-color: white">
+                <div class="md-toolbar-tools">
+                    <md-button ng-click="showRename = !showRename" aria-label="Back">
+                        <ng-md-icon icon="arrow_back"></ng-md-icon>
+                    </md-button>
+                    <md-input-container md-theme="input" flex ng-keypress="showRename = vm.rename(newName,$event,showRename)">
+                        <label>&nbsp;</label>
+                        <input ng-model="newName" placeholder="enter new name">
+                    </md-input-container>
+                    <md-button aria-label="create" ng-click="showRename = !showRename; vm.rename(newName);">
+                        <md-tooltip md-direction="top">Rename</md-tooltip>
+                        <ng-md-icon icon="create"></ng-md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+        </div>
+
+        <div id="content" style="height: 100%;" flex layout="column">
+            <div id="top-content" style="height: 50%;" flex layout="column" ng-if="vm.dataLoaded">
+                <div ui-ace="{
+                        onLoad: aceLoaded,
+                        mode: 'xml'
+                     }"
+                     style="height: 100%"></div>
+            </div>
+
+            <div id="bottom-content" style="height: 100%; background-color: green" flex>
+                <textarea style="height: 100%; width: 100%"
+                    ng-readonly="true"
+                    ng-model="vm.textArea"
+                >
+                </textarea>
+            </div>
+
+        </div>
+    </div>
+</div>

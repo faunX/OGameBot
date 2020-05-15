@@ -1,0 +1,9 @@
+ID,Name,WebName,Requires (id.level/id.level),costMultiplier,baseMetal,baseCrystal,baseDueterium,baseSolar
+8,Robotics Factory,14,,2,400,120,200,0
+9,Shipyard,21,8.2,2,400,200,100,0
+10,Research Lab,31,,2,200,400,200,0
+11,Alliance Depot,34,,2,20000,40000,0,0
+12,Missile Silo,44,9.1,2,20000,20000,1000,0
+13,Nanite Factory,15,8.10/25.10,2,1000000,500000,100000,0
+14,Terraformer,33,13.1/16.12,2,0,50000,100000,1000
+15,Space Dock,36,,5,200,0,50,50

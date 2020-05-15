@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ogame Bot</title>
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />-->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="dashboard/tests/tests.view.css">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body ng-app="app" ng-cloak>
+<div class="jumbotron" id="main">
+    <div class="container" layout-align="center center">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>
+
+
+<!--**************************************************************************-->
+
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./bower_components/angular-route/angular-route.min.js"></script>
+<script src="./bower_components/angular-cookies/angular-cookies.min.js"></script>
+<script src="./bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="./bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="./bower_components/angular-material/angular-material.min.js"></script>
+<script src="./bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="./bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+<script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<!--<script src="./bower_components/ace-builds/src-min-noconflict/ace.js"></script>-->
+<!--<script type="text/javascript" src="bower_components/angular-ui-ace/ui-ace.min.js"></script>-->
+<!--<script src="bower_components/ace-builds/src-min-noconflict/ext-language_tools.js"></script>-->
+<!--<script src="bower_components/async/dist/async.min.js"></script>-->
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/ng-stomp/dist/ng-stomp.standalone.min.js"></script>
+
+<!-- Your application bootstrap  -->
+<script type="text/javascript">
+    /**
+     * You must include the dependency on 'ngMaterial'
+     */
+    angular.module('app', ['ngMaterial']);
+</script>
+
+<!--**************************************************************************-->
+<!--**************************************************************************-->
+<!--User library-->
+<script src="app.js"></script>
+
+<script src="common/resizer.js"></script>
+<!--<script src="main/home.controller.js"></script>-->
+<script src="login/login.controller.js"></script>
+<script src="register/register.controller.js"></script>
+<script src="common/main.controller.js"></script>
+<script src="dashboard/tests/tests.controller.js"></script>
+<script src="dashboard/specifications/specifications.controller.js"></script>
+<script src="dashboard/dashboard.controller.js"></script>
+
+<script src="app-services/authentication.service.js"></script>
+<script src="app-services/commons.js"></script>
+<script src="app-services/user.service.js"></script>
+<script src="app-services/user.service.local-storage.js"></script>
+
+<script src="common/common-router.js"></script>
+<script src="common/chatservice.js"></script>
+
+<!--<script src="home/app-router.js"></script>-->
+<!--End User Library-->
+<!--**************************************************************************-->
+</body>
+</html>

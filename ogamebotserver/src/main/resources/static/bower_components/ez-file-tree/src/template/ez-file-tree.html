@@ -1,0 +1,24 @@
+<div class="label-container" ng-class="{selected: data._selected}">
+
+  <span class="folder-toggle" ng-click="toggle($event, data)" ng-if="config.isFolder(data) && !(config.movingFolder && config.movingFolder == data[config.idField])">
+    <i ng-class="config.icons.chevronRight" title="Open folder" ng-show="!data._open && config.isFolder(data)"></i>
+    <i ng-class="config.icons.chevronDown" title="Close folder" ng-show="data._open && config.isFolder(data)"></i>
+  </span>
+
+  <label ng-class="{'unselectable': (config.isFolder(data) && config.movingFolder && config.movingFolder == data[config.idField]) || (!config.isFolder(data) && !config.enableFileSelection)}">
+    <input type="checkbox" ng-checked="data._selected" ng-click="select($event, data)" ng-show="showCheckbox(data)"/>
+    <span ng-dblclick="toggle($event, data)">
+      <span class="icon-container">
+        <i ng-class="config.icons.folder" ng-show="config.isFolder(data) && !data._open"></i>
+        <i ng-class="config.icons.openFolder" ng-show="config.isFolder(data) && data._open"></i>
+        <i ng-class="config.icons.file" ng-show="!config.isFolder(data)"></i>
+      </span>
+      <span class="file-name">{{data.name}}</span>
+    </span>
+  </label>
+
+</div>
+
+<ul ng-show="data._open">
+    <li ng-repeat="data in data[config.childrenField] | object2array | orderBy:['-type', 'name']" ng-include="'ez-file-tree.html'"></li>
+</ul>

@@ -1,0 +1,31 @@
+{
+  "name": "ez-file-tree",
+  "version": "0.5.1",
+  "main": [
+    "dist/ez-file-tree.min.js",
+    "dist/ez-file-tree.min.css"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "devDependencies": {
+    "angular-mocks": "*",
+    "jquery": "~2.1.0"
+  },
+  "dependencies": {
+    "angular": "1.2.*",
+    "ez-object2array": ""
+  },
+  "homepage": "https://github.com/jdewit/ez-file-tree",
+  "_release": "0.5.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.5.1",
+    "commit": "d76d7f482520b9338249929e13edd95795b48cde"
+  },
+  "_source": "https://github.com/jdewit/ez-file-tree.git",
+  "_target": "^0.5.1",
+  "_originalSource": "ez-file-tree"
+}
